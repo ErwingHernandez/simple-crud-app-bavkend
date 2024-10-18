@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const Product = require('./models/product.model')
 const productRoute = require('./routes/product.routes')
+const PORT = 4000 || 5000;
 
 const app = express()
 
@@ -20,8 +21,8 @@ app.get('/', (req, res)=>{
 mongoose.connect("mongodb+srv://herwing43:Nueve123@backenddb.s7yan.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDB")
 .then(() =>{
     console.log("Connected to database!");
-    app.listen(10000, () =>{
-        console.log(`Server is running on localhost:${1000}`);
+    app.listen(PORT, () =>{
+        console.log(`Server is running on localhost:${PORT}`);
     });
 })
 .catch(() =>{
